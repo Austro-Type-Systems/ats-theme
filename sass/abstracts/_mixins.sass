@@ -1,0 +1,12 @@
+=flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+// Mixin for min-width queries
+@mixin breakpoint-above($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media screen and (min-width: map-get($breakpoints, $breakpoint))
+      @content
+  @else
+    @warn "Unknown breakpoint: #{$breakpoint}"
